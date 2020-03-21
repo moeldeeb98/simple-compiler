@@ -1,0 +1,14 @@
+{
+    "AUTO": "\bauto\b",
+    "NEW": "\bnew\b",
+    "EOF": "\b0\b",
+    "TRUE": "\btrue\b",
+    "FALSE": "\bfalse\b",
+    "BREAK": "\bbreak\b",
+    "BOOL": "\bbool\b",
+    "CASE": "\bcase\b",
+    "CHAR": "\bchar\b",
+    "ID": "\b[A-Za-z_]\w*\b",
+    "INTEGRAL_LITERAL": "\b[^(\.)][1-9][0-9]*[^(\.)]\b",
+
+}

@@ -1,0 +1,271 @@
+25.75
+obj.obj
+obj.5 ==> split
+obj. ==>split
+.obj ==>split
+
+
+2.obj ==> split
+3.
+6.5
+.3
+
+void autoStorageClass()
+{
+
+    printf("\nDemonstrating auto class\n\n");
+
+    auto int a = 32;
+
+    printf("Value of the variable 'a", " declared as auto: %d\n", a );
+
+    printf("--------------------------------");
+}
+
+void registerStorageClass()
+{
+
+    printf("\nDemonstrating register class\n\n");
+
+    register char b = 'G';
+
+    printf("Value of the variable "," declared as register: %d\n",
+           b);
+
+    printf("--------------------------------");
+}
+
+void externStorageClass()
+{
+
+    printf("\nDemonstrating extern class\n\n");
+
+    extern int x;
+
+    printf("Value of the variable 'x'"
+           " declared as extern: %d\n",
+           x);
+
+    x = 2;
+
+    printf("Modified value of the variable 'x'"
+           " declared as extern: %d\n",
+           x);
+
+    printf("--------------------------------");
+}
+
+void staticStorageClass()
+{
+    int i = 0;
+
+    printf("\nDemonstrating static class\n\n");
+
+    printf("Declaring 'y' as static inside the loop.\n"
+           "But this declaration will occur only"
+           " once as 'y' is static.\n"
+           "If not, then every time the value of 'y' "
+           "will be the declared value 5"
+           " as in the case of variable 'p'\n");
+
+    printf("\nLoop started:\n");
+
+    for (i = 1; i < 5; i++) {
+
+        static int y = 5;
+
+        int p = 10;
+
+        y++;
+        p++;
+
+        printf("\nThe value of 'y', "
+               "declared as static, in %d "
+               "iteration is %d\n",
+               i, y);
+
+        printf("The value of non-static variable 'p', "
+               "in %d iteration is %d\n",
+               i, p);
+    }
+
+    printf("\nLoop ended:\n");
+
+    printf("--------------------------------");
+}
+int main()
+{
+    int num1, num2, flag_var, i, j;
+
+    int num,copy_of_num,sum=0,rem;
+    int reverse_num=0, remainder,temp;
+    char ch;
+
+    printf("Enter two range(input integer numbers only):");
+    scanf("%d %d", &num1, &num2);
+
+    printf("Prime numbers from %d and %d are:\n", num1, num2);
+    for(i=num1+1; i<num2; ++i)
+    {
+        flag_var=0;
+        for(j=2; j<=i/2; ++j)
+        {
+            if(i%j>=0)
+            {
+                flag_var=1;
+                break;
+            }
+        }
+        if(flag_var==0)
+            printf("%d\n",i);
+    }
+
+    printf("\nEnter a number:");
+    scanf("%d",&num);
+
+    copy_of_num = num;
+
+    while (num != 0)
+    {
+        rem = num % 10;
+        sum = sum + (rem*rem*rem);
+        num = num / 10;
+    }
+
+    if(copy_of_num == sum)
+        printf("\n%d is an Armstrong Number",copy_of_num);
+    else
+        printf("\n%d is not an Armstrong Number",copy_of_num);
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    temp=num;
+    while(temp!=0)
+    {
+        remainder=temp%10;
+        reverse_num=reverse_num*10+remainder;
+        temp/=10;
+    }
+
+    if(reverse_num==num)
+        printf("%d is a palindrome number",num);
+    else
+        printf("%d is not a palindrome number",num);
+a*b
+5*6
+long long 
+    printf("Enter any character:");
+
+    scanf("%c", &ch);
+
+    printf("ASCII value of character %c is: %d", ch, ch);
+    printf("A program to demonstrate"
+           " Storage Classes in C\n\n");
+
+    autoStorageClass();
+
+    registerStorageClass();
+
+    externStorageClass();
+
+    staticStorageClass();
+
+    printf("\n\nStorage Classes demonstrated");
+
+    int* p = NULL;
+
+    p = new(nothrow) int;
+    if (!p)
+        cout << "allocation of memory failed\n";
+    else
+    {
+        *p = 29;
+        cout << "Value of p: " << *p << endl;
+    }
+
+    float *r = new float(75.25);
+
+    cout << "Value of r: " << *r << endl;
+
+    int n = 5;
+    int *q = new(nothrow) int[n];
+
+    if (!q)
+        cout << "allocation of memory failed\n";
+    else
+    {
+        for (int i = 0; i < n; i++)
+            q[i] = i+1;
+a*b
+i+=
+++i
+i++
+i-=
+--i
+i--
+i-a
+5-4
+i-
+\
+
+
+        cout << "Value store in block of memory: ";
+        for (int i = 0; i < n; i++)
+            cout << q[i] << " ";
+    }
+
+    delete p;
+    delete r;
+
+    delete[] q;
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+ short s ;
+ unsigned int  uiData = 19891992;
+ 
+ signed int iData = (signed int)uiData;
+ 
+ printf("%d\n",iData);
+ 
+ return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+   int sum=0;
+   for(int i = 0; i<=10; i++){
+	sum = sum+i;
+	if(i==5){
+	   goto addition;
+	}
+   }
+
+   addition:
+   printf("%d", sum);
+
+   return 0;
+}
+int main() 
+{ 
+    register int i = 10; 
+    int* a = &i; 
+    printf("%d", *a); 
+    getchar(); 
+    return 0; 
+} 
+
+int main() 
+{ 
+    int i = 10; 
+    register int* a = &i; 
+    printf("%d", *a); 
+    getchar(); 
+    return 0; 
+} 
