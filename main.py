@@ -43,39 +43,39 @@ tokens = {
     'INTEGRAL_LITERAL': r'^[1-9][0-9]*$',
     'FLOAT_LITERAL': r'^([0-9]+([.][0-9]*)?|[.][0-9]+)$', #done
     'CHAR_LITERAL': r"^'[^']'$", #done
-    'LEFT_CURLY_B': r'}', #done
-    'RIGHT_CURLY_B': r'{', #done
-    'LEFT_SQUARE_B': r']', #done
-    'RIGHT_SQUARE_B': r'\[', #done
-    'LEFT_ROUND_B' : r'\)', #done
-    'RIGHT_ROUND_B': r'\(', #done
-    'COMMA': r',', #done
-    'SEMICOLON': r';', #done
-    'DOT': r'\.', #done
-    'NOT': r'!', #done
+    'LEFT_CURLY_B': r'^}$', #done
+    'RIGHT_CURLY_B': r'^{$', #done
+    'LEFT_SQUARE_B': r'^]$', #done
+    'RIGHT_SQUARE_B': r'^\[$', #done
+    'LEFT_ROUND_B' : r'^\)$', #done
+    'RIGHT_ROUND_B': r'^\($', #done
+    'COMMA': r'^,$', #done
+    'SEMICOLON': r'^;$', #done
+    'DOT': r'^\.$', #done
+    'NOT': r'^!$', #done
     'ASSIGN_OPERATOR': r'^=$', #done
-    'PREPROCESSOR': r'#', #done
+    'PREPROCESSOR': r'^#$', #done
 #     'BACKWARD_SLASH': r'\\', #done
-    'MINUS': r'-', #done
-    'PLUS': r'\+', #done
-    'ASTERICK': r'\*', #done
-    'DIVIDE': r'/', #done
-    'MOD': r'%', #done
-    'LESSTHAN': r'>', #done
-    'GREATERTHAN': r'<',
-    'LESS_EQ': r'=>',
-    'EQUAL': r'==',
-    'NOT_EQUAL': r'!=',
-    'AND': r'&&',
-    'OR': r'||',
-    'BITWISE_AND': r'&',
-    'BITWISE_OR': r'|',
-    'BITWISE_XOR': r'^',
-    'LEFT_SHIFT': r'>>',
-    'RIGHT_SHIFT': r'<<',
-    'BITWISE_NOT': r'~',
-    'SINGLE_COMMENT': r'//[^\r\n]*',
-    'MULTI_COMMENT': r'/\(.)\*/'
+    'MINUS': r'^-$', #done
+    'PLUS': r'^\+$', #done
+    'ASTERICK': r'^\*$', #done
+    'DIVIDE': r'^/$', #done
+    'MOD': r'^%$', #done
+    'LESSTHAN': r'^>$', #done
+    'GREATERTHAN': r'^<$',
+    'LESS_EQ': r'^=>$',
+    'EQUAL': r'^==$',
+    'NOT_EQUAL': r'^!=$',
+    'AND': r'^&&$',
+    'OR': r'^||$',
+    'BITWISE_AND': r'^&$',
+    'BITWISE_OR': r'^|$',
+    'BITWISE_XOR': r'^^$',
+    'LEFT_SHIFT': r'^>>$',
+    'RIGHT_SHIFT': r'^<<$',
+    'BITWISE_NOT': r'^~$',
+    'SINGLE_COMMENT': r'^//[^\r\n]*$',
+    'MULTI_COMMENT': r'^/\*(.)*\*/$'
 
 }
 
