@@ -1,9 +1,11 @@
+x = ' '
+\
 x|X
 y||d
 X == X
 
 25.75
-obj.obj
+obj.obj|)
 obj.5 ==> split
 obj. ==>split
 .obj ==>spl

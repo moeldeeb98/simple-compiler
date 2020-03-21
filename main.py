@@ -55,7 +55,7 @@ tokens = {
     'NOT': r'^!$', #done
     'ASSIGN_OPERATOR': r'^=$', #done
     'PREPROCESSOR': r'^#$', #done
-#     'BACKWARD_SLASH': r'\\', #done
+    'BACKWARD_SLASH': r'\\', #done
     'MINUS': r'^-$', #done
     'PLUS': r'^\+$', #done
     'ASTERICK': r'^\*$', #done
@@ -67,9 +67,9 @@ tokens = {
     'EQUAL': r'^==$',
     'NOT_EQUAL': r'^!=$',
     'AND': r'^&&$',
-    'OR': r'^||$',
+    'OR': r'^\|\|$',
     'BITWISE_AND': r'^&$',
-    'BITWISE_OR': r'^|$',
+    'BITWISE_OR': r'^\|$',
     'BITWISE_XOR': r'^^$',
     'LEFT_SHIFT': r'^>>$',
     'RIGHT_SHIFT': r'^<<$',
@@ -78,7 +78,11 @@ tokens = {
     'MULTI_COMMENT': r'^/\*(.)*\*/$'
 
 }
-
+"""
+we need to maintain our code on Single and multi comment
+also we need handl a space char
+should break if there are any error
+"""
 
 
 
