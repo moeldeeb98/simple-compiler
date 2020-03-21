@@ -121,15 +121,18 @@ def splitOnSymboles(string):
             skipOne = False
             continue
         if char in symboles:
-            if string[idx+1] in ['&', '|', '<', '>', '='] and char == string[idx+1]:
+            if idx+1 < len(string) and string[idx+1] in ['&', '|', '<', '>', '='] and char == string[idx+1]:
+                skipOne = True
                 words.append(char + string[idx+1])
                 word = ""
                 continue
-            if char == '=' and string[idx+1] in ['<', '>']:
+            if  idx+1 < len(string) and char == '=' and string[idx+1] in ['<', '>']:
+                skipOne = True
                 words.append(char + string[idx+1])
                 word = ""
                 continue
-            if char == '!' and string[idx+1] == '=':
+            if  idx+1 < len(string) and char == '!' and string[idx+1] == '=':
+                skipOne = True
                 words.append(char + string[idx+1])
                 word = ""
                 continue
