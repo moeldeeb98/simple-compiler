@@ -53,7 +53,7 @@ tokens = {
     'SEMICOLON': r';', #done
     'DOT': r'\.', #done
     'NOT': r'!', #done
-    'ASSIGN_OPERATOR': r'=', #done
+    'ASSIGN_OPERATOR': r'^=$', #done
     'PREPROCESSOR': r'#', #done
 #     'BACKWARD_SLASH': r'\\', #done
     'MINUS': r'-', #done
@@ -86,6 +86,7 @@ def splitwithQuotes(string):
     words = []
     word = ""
     opend = False
+    commentOpened = False
     for char in string:
         if opend and char != '"':
             word += char
