@@ -108,10 +108,26 @@ def splitwithQuotes(string):
 
 def splitOnSymboles(string):
     words = []
-    symboles = ['(', ')', '{', '}', '+', '-', '=', '/', '*', '<', '>', '[', ']', ',', ';']
+    symboles = ['(', ')', '{', '}', '+', '-', '=', '/', '*', '<', '>', '[', ']', ',', ';', '&', '|', '^', '!']
     word = ""
+    skipOne = False
     for idx, char in enumerate(string) :
+        if skipOne:
+            skipOne = False
+            continue
         if char in symboles:
+            if string[idx+1] in ['&', '|', '<', '>', '='] and char == string[idx+1]:
+                words.append(char + string[idx+1])
+                word = ""
+                continue
+            if char == '=' and string[idx+1] in ['<', '>']:
+                words.append(char + string[idx+1])
+                word = ""
+                continue
+            if char == '!' and string[idx+1] == '=':
+                words.append(char + string[idx+1])
+                word = ""
+                continue
             if not (len(word) == 0 or word.isspace()):
                 words.append(word.strip())
             words.append(char)
