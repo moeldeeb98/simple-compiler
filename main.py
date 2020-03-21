@@ -2,46 +2,46 @@ import re
 
 tokens = {
     'STRING_LITERAL': r'^"[^"]*$"',#done
-    'AUTO': r'\bauto\b', #done
-    'NEW': r'\bnew\b', #done
-    'EOF': r'\b0\b', #done
-    'TRUE': r'\btrue\b', #done
-    'FALSE': r'\bfalse\b', #done
-    'BREAK': r'\bbreak\b', #done
-    'BOOL': r'\bbool\b', #done
-    'CASE': r'\bcase\b', #done
-    'CHAR' : r'\bchar\b', #done
-    'CONST': r'\bconst\b',#done
-    'CONTINUE': r'\bcontinue\b',#done
-    'DEFAULT': r'\bdefault\b',#done
-    'DO': r'\bdo\b',#done
-    'DOUBLE': r'\bdouble\b',#done
-    'ELSE': r'\belse\b',#done
-    'ENUM': r'\benum\b',#done
-    'EXTERN': r'\bextern\b',#done
-    'FLOAT': r'\bfloat\b',#done
-    'FOR': r'\bfor\b', #done
-    'GOTO': r'\bgoto\b', #done
-    'IF': r'\bif\b', #done
-    'INT': r'\bint\b', #done
-    'LONG': r'\blong\b', #done
-    'REGISTER': r'\bregister\b', #done
-    'RETURN': r'\breturn\b', #done
-    'SHORT': r'\bshort\b', #done
-    'SIGNED': r'\bsigned\b', #done
-    'SIZEOF': r'\bsizeof\b', #done
-    'STATIC': r'\bstatic\b', #done
-    'STRUCT': r'\bstruct\b', #done
-    'SWITCH': r'\bswitch\b', #done
-    'TYPEDEF': r'\btypedef\b', #done
-    'UNION': r'\bunion\b', #done
-    'UNSIGNED': r'\bunsigned\b', #done
-    'VOID': r'\bvoid\b', #done
-    'VOLATILE': r'\bvolatile\b', #done
-    'WHILE': r'\bwhile\b', #done
-    'ID': r'\b[A-Za-z_]\w*\b', #done
+    'AUTO': r'^auto$', #done
+    'NEW': r'^new$', #done
+    'EOF': r'^0$', #done
+    'TRUE': r'^true$', #done
+    'FALSE': r'^false$', #done
+    'BREAK': r'^break$', #done
+    'BOOL': r'^bool$', #done
+    'CASE': r'^case$', #done
+    'CHAR' : r'^char$', #done
+    'CONST': r'^const$',#done
+    'CONTINUE': r'^continue$',#done
+    'DEFAULT': r'^default$',#done
+    'DO': r'^do$',#done
+    'DOUBLE': r'^double$',#done
+    'ELSE': r'^else$',#done
+    'ENUM': r'^enum$',#done
+    'EXTERN': r'^extern$',#done
+    'FLOAT': r'^float$',#done
+    'FOR': r'^for$', #done
+    'GOTO': r'^goto$', #done
+    'IF': r'^if$', #done
+    'INT': r'^int$', #done
+    'LONG': r'^long$', #done
+    'REGISTER': r'^register$', #done
+    'RETURN': r'^return$', #done
+    'SHORT': r'^short$', #done
+    'SIGNED': r'^signed$', #done
+    'SIZEOF': r'^sizeof$', #done
+    'STATIC': r'^static$', #done
+    'STRUCT': r'^struct$', #done
+    'SWITCH': r'^switch$', #done
+    'TYPEDEF': r'^typedef$', #done
+    'UNION': r'^union$', #done
+    'UNSIGNED': r'^unsigned$', #done
+    'VOID': r'^void$', #done
+    'VOLATILE': r'^volatile$', #done
+    'WHILE': r'^while$', #done
+    'ID': r'^[A-Za-z_]\w*$', #done
     'INTEGRAL_LITERAL': r'^[1-9][0-9]*$',
-    'FLOAT_LITERAL': r'\b([0-9]+([.][0-9]*)?|[.][0-9]+)\b', #done
+    'FLOAT_LITERAL': r'^([0-9]+([.][0-9]*)?|[.][0-9]+)$', #done
     'CHAR_LITERAL': r"^'[^']'$", #done
     'LEFT_CURLY_B': r'}', #done
     'RIGHT_CURLY_B': r'{', #done
@@ -62,15 +62,20 @@ tokens = {
     'DIVIDE': r'/', #done
     'MOD': r'%', #done
     'LESSTHAN': r'>', #done
-    'GREATERTHAN': '<',
-    'LESS_EQ': '=>',
-    'EQUAL': '==',
-    'NOT_EQUAL': '!=',
-    'AND': '&&',
-    'OR': '||',
-    'BITWISE_AND': '&',
-    'BITWISE_OR': '|',
-    'BITWISE_XOR': '^'
+    'GREATERTHAN': r'<',
+    'LESS_EQ': r'=>',
+    'EQUAL': r'==',
+    'NOT_EQUAL': r'!=',
+    'AND': r'&&',
+    'OR': r'||',
+    'BITWISE_AND': r'&',
+    'BITWISE_OR': r'|',
+    'BITWISE_XOR': r'^',
+    'LEFT_SHIFT': r'>>',
+    'RIGHT_SHIFT': r'<<',
+    'BITWISE_NOT': r'~',
+    'SINGLE_COMMENT': r'//[^\r\n]*',
+    'MULTI_COMMENT': r'/\(.)\*/'
 
 }
 
@@ -154,11 +159,11 @@ def tokenize(word):
 
 # print("Number of matches :", len(match))
 
-file  = open('/home/mohamed/Documents/fci-cu/compilers/data.txt', 'r')
+file  = open('data.txt', 'r')
 code = file.read()
 file.close()
 
-outFile = open('/home/mohamed/Documents/fci-cu/compilers/out.txt','w') 
+outFile = open('out.txt','w') 
   
 # file.write(“This is our new text file”) 
 # file.write(“and this is another line.”) 
