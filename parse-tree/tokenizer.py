@@ -37,7 +37,10 @@ class TokenRepo():
             raise Exception("this method take Token obj")
 
     def has_next(self):
-        pass
+        if len(TokenRepo.__queue) > 0:
+            return True
+        else:
+            return False
 
     def get_next(self):
         pass
