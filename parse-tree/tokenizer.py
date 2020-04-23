@@ -37,13 +37,18 @@ class TokenRepo():
             raise Exception("this method take Token obj")
 
     def has_next(self):
+        """ return flase if the queue is empty otherwise return true """
         if len(TokenRepo.__queue) > 0:
             return True
         else:
             return False
 
     def get_next(self):
-        pass
+        """ return the first Token Obj in the Queue """
+        if self.has_next():
+            return TokenRepo.__queue[0]
+        else:
+            raise Exception("The Queue is Empty")
 
     def consume(self):
         pass
