@@ -24,11 +24,17 @@ class TokenRepo():
             raise Exception("This class is a singleton!")
         else:
             TokenRepo.__instance = self
+
     def get_queue(self):
+        """ return list of Token objects """
         return TokenRepo.__queue
 
     def add_token(self, token):
-        TokenRepo.__queue.append(token)
+        """ add a token Obj """
+        if isinstance(token, Token):
+            TokenRepo.__queue.append(token)
+        else:
+            raise Exception("this method take Token obj")
 
     def has_next(self):
         pass
@@ -39,12 +45,3 @@ class TokenRepo():
     def consume(self):
         pass
 
-t2 = TokenRepo.get_instance()
-print(t2.get_queue())
-t2.add_token(5)
-
-t4 = TokenRepo.get_instance()
-print(t4.get_queue())
-t4.add_token(7)
-t3 = TokenRepo.get_instance()
-print(t3.get_queue())
