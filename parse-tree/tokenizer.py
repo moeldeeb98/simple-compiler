@@ -51,5 +51,9 @@ class TokenRepo():
             raise Exception("The Queue is Empty")
 
     def consume(self):
-        pass
-
+        """ return the first Token Obj in the Queue and delete it """
+        if self.has_next():
+            token = TokenRepo.__queue.pop(0)
+            return token
+        else:
+            raise Exception("The Queue is Empty")
