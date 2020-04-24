@@ -1,4 +1,4 @@
-from tokenizer import Token
+from tokenizer import Token, TokenRepo
 
 def filter(str):
     new_str = str.replace('<', '')
@@ -16,8 +16,9 @@ def reader():
     file = open("TestCase1.txt", "r")
     for line in file:
         data = spliter(line)
-        x = Token(data[0], data[1])
-        print(x.value)
+        T = TokenRepo.get_instance()
+        token = Token(data[0], data[1])
+        T.add_token(token)
         
 
 if __name__ == "__main__":
